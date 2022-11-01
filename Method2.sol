@@ -4,7 +4,7 @@ pragma solidity ^0.8.11;
 import "@openzeppelin/contracts/utils/Address.sol";
 import "hardhat/console.sol";
 
-contract CryptoBank is ReentrancyGuard {
+contract CryptoBank {
     using Address for address payable;
 
     // keeps track of all savings account balances
@@ -27,7 +27,7 @@ contract CryptoBank is ReentrancyGuard {
        
         uint accountBalance = balances[msg.sender]
         balances[msg.sender] = 0;
-        payable(msg.sender).sendValue(balances[msg.sender]);
+        payable(msg.sender).sendValue(accountBalance);
         
     }
 
