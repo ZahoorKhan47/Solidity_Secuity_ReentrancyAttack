@@ -24,7 +24,7 @@ contract CryptoBank is ReentrancyGuard {
         console.log("Attacker balance: ", balances[msg.sender]);
         
         
-        
+       
         uint accountBalance = balances[msg.sender]
         balances[msg.sender] = 0;
         payable(msg.sender).sendValue(balances[msg.sender]);
